@@ -4,9 +4,9 @@ using WA.Models;
 
 namespace WA.Data.Map
 {
-    public class PessoaMap : IEntityTypeConfiguration<PessoaModel>
+    public class PessoaMap : IEntityTypeConfiguration<Pessoa>
     {
-        public void Configure(EntityTypeBuilder<PessoaModel> builder)
+        public void Configure(EntityTypeBuilder<Pessoa> builder)
         {
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Matricula).IsRequired().HasMaxLength(25);
@@ -18,6 +18,7 @@ namespace WA.Data.Map
             builder.Property(c => c.Tipo).IsRequired();
             builder.Property(c => c.Senha).HasMaxLength(255);
             builder.Property(c => c.Ativo).IsRequired();
+            builder.HasMany(c => c.Inscricoes);
         }
     }
 }

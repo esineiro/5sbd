@@ -4,10 +4,10 @@ namespace WA.Infra.Repository.Interfaces
 {
     public interface ITurmaRepositorio
     {
-        Task<List<TurmaModel>> BuscarTodasAsTurmas();
-        Task<TurmaModel> BuscarTurmaPorId(int id);
-        Task<TurmaModel> AdicionarTurma(TurmaModel turma);
-        Task<TurmaModel> AtualizarTurma(TurmaModel turma, int id);
+        Task<List<Turma>> BuscarTodasAsTurmas();
+        Task<Turma> BuscarTurmaPorId(int id);
+        Task<Turma> AdicionarTurma(Turma turma);
+        Task<Turma> AtualizarTurma(Turma turma, int id);
         Task<bool> ApagarTurma(int id);
     }
 }

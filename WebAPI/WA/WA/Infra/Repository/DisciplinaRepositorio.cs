@@ -12,25 +12,25 @@ namespace WA.Infra.Repository
         {
             _dbContext = aPICorujaDBContext;
         }
-        public async Task<DisciplinaModel> BuscarDisciplinaPorId(int id)
+        public async Task<Disciplina> BuscarDisciplinaPorId(int id)
         {
             return await _dbContext.Disciplina.FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<List<DisciplinaModel>> BuscarTodasAsDisciplinas()
+        public async Task<List<Disciplina>> BuscarTodasAsDisciplinas()
         {
             return await _dbContext.Disciplina.ToListAsync();
         }
-        public async Task<DisciplinaModel> AdicionarDisciplina(DisciplinaModel disciplina)
+        public async Task<Disciplina> AdicionarDisciplina(Disciplina disciplina)
         {
             await _dbContext.Disciplina.AddAsync(disciplina);
             await _dbContext.SaveChangesAsync();
 
             return disciplina;
         }
-        public async Task<DisciplinaModel> AtualizarDisciplina(DisciplinaModel disciplina, int id)
+        public async Task<Disciplina> AtualizarDisciplina(Disciplina disciplina, int id)
         {
-            DisciplinaModel disciplinaPorId = await BuscarDisciplinaPorId(id);
+            Disciplina disciplinaPorId = await BuscarDisciplinaPorId(id);
             if (disciplinaPorId == null)
             {
                 throw new Exception($"Não foi encontrada nenhuma disciplina para o Id:{id}!");
@@ -50,7 +50,7 @@ namespace WA.Infra.Repository
         }
         public async Task<bool> ApagarDisciplina(int id)
         {
-            DisciplinaModel disciplinaPorId = await BuscarDisciplinaPorId(id);
+            Disciplina disciplinaPorId = await BuscarDisciplinaPorId(id);
             if (disciplinaPorId == null)
             {
                 throw new Exception($"Não foi encontrada nenhuma disciplina para o Id:{id}!");

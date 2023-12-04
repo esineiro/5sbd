@@ -12,25 +12,27 @@ namespace WA.Infra.Repository
         {
             _dbContext = aPICorujaDBContext;
         }
-        public async Task<PessoaModel> BuscarPessoaPorId(int id)
+        public async Task<Pessoa> BuscarPessoaPorId(int id)
         {
+            //Pessoa pessoa = await _dbContext.Pessoa.FirstOrDefaultAsync(c => c.Id == id);
+            //return pessoa;
             return await _dbContext.Pessoa.FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<List<PessoaModel>> BuscarTodasAsPessoas()
+        public async Task<List<Pessoa>> BuscarTodasAsPessoas()
         {
             return await _dbContext.Pessoa.ToListAsync();
         }
-        public async Task<PessoaModel> AdicionarPessoa(PessoaModel pessoa)
+        public async Task<Pessoa> AdicionarPessoa(Pessoa pessoa)
         {
             await _dbContext.Pessoa.AddAsync(pessoa);
             await _dbContext.SaveChangesAsync();
 
             return pessoa;
         }
-        public async Task<PessoaModel> AtualizarPessoa(PessoaModel pessoa, int id)
+        public async Task<Pessoa> AtualizarPessoa(Pessoa pessoa, int id)
         {
-            PessoaModel pessoaPorId = await BuscarPessoaPorId(id);
+            Pessoa pessoaPorId = await BuscarPessoaPorId(id);
             if (pessoaPorId == null)
             {
                 throw new Exception($"Não foi encontrada nenhuma pessoa para o Id:{id}!");
@@ -51,7 +53,7 @@ namespace WA.Infra.Repository
         }
         public async Task<bool> ApagarPessoa(int id)
         {
-            PessoaModel pessoaPorId = await BuscarPessoaPorId(id);
+            Pessoa pessoaPorId = await BuscarPessoaPorId(id);
             if (pessoaPorId == null)
             {
                 throw new Exception($"Não foi encontrada nenhuma pessoa para o Id:{id}!");

@@ -14,33 +14,33 @@ namespace WA.Controllers
             _turmaRepositorio = turmaRepositorio;
         }
         [HttpGet]
-        public async Task<ActionResult<List<TurmaModel>>> BuscarTodasAsTurmas()
+        public async Task<ActionResult<List<Turma>>> BuscarTodasAsTurmas()
         {
 
-            List<TurmaModel> turmas = await _turmaRepositorio.BuscarTodasAsTurmas();
+            List<Turma> turmas = await _turmaRepositorio.BuscarTodasAsTurmas();
             return Ok(turmas);
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<TurmaModel>> BuscarTurmaPorId(int id)
+        public async Task<ActionResult<Turma>> BuscarTurmaPorId(int id)
         {
-            TurmaModel turma = await _turmaRepositorio.BuscarTurmaPorId(id);
+            Turma turma = await _turmaRepositorio.BuscarTurmaPorId(id);
             return Ok(turma);
         }
         [HttpPost]
-        public async Task<ActionResult<TurmaModel>> Cadastrar([FromBody] TurmaModel turmaModel)
+        public async Task<ActionResult<Turma>> Cadastrar([FromBody] Turma turmaModel)
         {
-            TurmaModel turma = await _turmaRepositorio.AdicionarTurma(turmaModel);
+            Turma turma = await _turmaRepositorio.AdicionarTurma(turmaModel);
             return Ok(turma);
         }
         [HttpPut("{id}")]
-        public async Task<ActionResult<TurmaModel>> Atualizar([FromBody] TurmaModel turmaModel, int id)
+        public async Task<ActionResult<Turma>> Atualizar([FromBody] Turma turmaModel, int id)
         {
             turmaModel.Id = id;
-            TurmaModel turma = await _turmaRepositorio.AtualizarTurma(turmaModel, id);
+            Turma turma = await _turmaRepositorio.AtualizarTurma(turmaModel, id);
             return Ok(turma);
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult<TurmaModel>> Apagar(int id)
+        public async Task<ActionResult<Turma>> Apagar(int id)
         {
             bool apagada = await _turmaRepositorio.ApagarTurma(id);
             return Ok(apagada);

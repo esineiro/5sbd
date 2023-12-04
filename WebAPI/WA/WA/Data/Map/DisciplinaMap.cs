@@ -4,9 +4,9 @@ using WA.Models;
 
 namespace WA.Data.Map
 {
-    public class DisciplinaMap : IEntityTypeConfiguration<DisciplinaModel>
+    public class DisciplinaMap : IEntityTypeConfiguration<Disciplina>
     {
-        public void Configure(EntityTypeBuilder<DisciplinaModel> builder)
+        public void Configure(EntityTypeBuilder<Disciplina> builder)
         {
             builder.HasKey(c => c.Id);
             builder.Property(c=> c.Nome).IsRequired().HasMaxLength(150);

@@ -12,25 +12,25 @@ namespace WA.Infra.Repository
         {
             _dbContext = aPICorujaDBContext;
         }
-        public async Task<TurmaModel> BuscarTurmaPorId(int id)
+        public async Task<Turma> BuscarTurmaPorId(int id)
         {
             return await _dbContext.Turma.FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<List<TurmaModel>> BuscarTodasAsTurmas()
+        public async Task<List<Turma>> BuscarTodasAsTurmas()
         {
             return await _dbContext.Turma.ToListAsync();
         }
-        public async Task<TurmaModel> AdicionarTurma(TurmaModel turma)
+        public async Task<Turma> AdicionarTurma(Turma turma)
         {
             await _dbContext.Turma.AddAsync(turma);
             await _dbContext.SaveChangesAsync();
 
             return turma;
         }
-        public async Task<TurmaModel> AtualizarTurma(TurmaModel turma, int id)
+        public async Task<Turma> AtualizarTurma(Turma turma, int id)
         {
-            TurmaModel turmaPorId = await BuscarTurmaPorId(id);
+            Turma turmaPorId = await BuscarTurmaPorId(id);
             if (turmaPorId == null)
             {
                 throw new Exception($"Não foi encontrada nenhuma turma para o Id:{id}!");
@@ -50,7 +50,7 @@ namespace WA.Infra.Repository
         }
         public async Task<bool> ApagarTurma(int id)
         {
-            TurmaModel turmaPorId = await BuscarTurmaPorId(id);
+            Turma turmaPorId = await BuscarTurmaPorId(id);
             if (turmaPorId == null)
             {
                 throw new Exception($"Não foi encontrada nenhuma turma para o Id:{id}!");

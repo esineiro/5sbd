@@ -12,25 +12,26 @@ namespace WA.Infra.Repository
         {
             _dbContext = aPICorujaDBContext;
         }
-        public async Task<InscricaoModel> BuscarInscricaoPorId(int id)
+        public async Task<Inscricao> BuscarInscricaoPorId(int id)
         {
             return await _dbContext.Inscricao.FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<List<InscricaoModel>> BuscarTodasAsInscricoes()
+        public async Task<List<Inscricao>> BuscarTodasAsInscricoes()
         {
             return await _dbContext.Inscricao.ToListAsync();
         }
-        public async Task<InscricaoModel> AdicionarInscricao(InscricaoModel inscricao)
+
+         public async Task<Inscricao> AdicionarInscricao(Inscricao inscricao)
         {
             await _dbContext.Inscricao.AddAsync(inscricao);
             await _dbContext.SaveChangesAsync();
 
             return inscricao;
         }
-        public async Task<InscricaoModel> AtualizarInscricao(InscricaoModel inscricao, int id)
+        public async Task<Inscricao> AtualizarInscricao(Inscricao inscricao, int id)
         {
-            InscricaoModel inscricaoPorId = await BuscarInscricaoPorId(id);
+            Inscricao inscricaoPorId = await BuscarInscricaoPorId(id);
             if (inscricaoPorId == null)
             {
                 throw new Exception($"Não foi encontrada nenhuma inscrição para o Id:{id}!");
@@ -53,7 +54,7 @@ namespace WA.Infra.Repository
         }
         public async Task<bool> ApagarInscricao(int id)
         {
-            InscricaoModel inscricaoPorId = await BuscarInscricaoPorId(id);
+            Inscricao inscricaoPorId = await BuscarInscricaoPorId(id);
             if (inscricaoPorId == null)
             {
                 throw new Exception($"Não foi encontrada nenhuma inscrição para o Id:{id}!");

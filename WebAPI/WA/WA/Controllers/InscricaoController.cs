@@ -14,33 +14,34 @@ namespace WA.Controllers
             _inscricaoRepositorio = inscricaoRepositorio;
         }
         [HttpGet]
-        public async Task<ActionResult<List<InscricaoModel>>> BuscarTodasAsInscricoes()
+        public async Task<ActionResult<List<Inscricao>>> BuscarTodasAsInscricoes()
         {
 
-            List<InscricaoModel> inscricoes = await _inscricaoRepositorio.BuscarTodasAsInscricoes();
+            List<Inscricao> inscricoes = await _inscricaoRepositorio.BuscarTodasAsInscricoes();
             return Ok(inscricoes);
         }
+        
         [HttpGet("{id}")]
-        public async Task<ActionResult<InscricaoModel>> BuscarInscricaoPorId(int id)
+        public async Task<ActionResult<Inscricao>> BuscarInscricaoPorId(int id)
         {
-            InscricaoModel inscricao = await _inscricaoRepositorio.BuscarInscricaoPorId(id);
+            Inscricao inscricao = await _inscricaoRepositorio.BuscarInscricaoPorId(id);
             return Ok(inscricao);
         }
         [HttpPost]
-        public async Task<ActionResult<InscricaoModel>> Cadastrar([FromBody] InscricaoModel inscricaoModel)
+        public async Task<ActionResult<Inscricao>> Cadastrar([FromBody] Inscricao inscricaoModel)
         {
-            InscricaoModel inscricao = await _inscricaoRepositorio.AdicionarInscricao(inscricaoModel);
+            Inscricao inscricao = await _inscricaoRepositorio.AdicionarInscricao(inscricaoModel);
             return Ok(inscricao);
         }
         [HttpPut("{id}")]
-        public async Task<ActionResult<InscricaoModel>> Atualizar([FromBody] InscricaoModel inscricaoModel, int id)
+        public async Task<ActionResult<Inscricao>> Atualizar([FromBody] Inscricao inscricaoModel, int id)
         {
             inscricaoModel.Id = id;
-            InscricaoModel inscricao = await _inscricaoRepositorio.AtualizarInscricao(inscricaoModel, id);
+            Inscricao inscricao = await _inscricaoRepositorio.AtualizarInscricao(inscricaoModel, id);
             return Ok(inscricao);
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult<InscricaoModel>> Apagar(int id)
+        public async Task<ActionResult<Inscricao>> Apagar(int id)
         {
             bool apagada = await _inscricaoRepositorio.ApagarInscricao(id);
             return Ok(apagada);

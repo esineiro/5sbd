@@ -10,10 +10,10 @@ namespace WA.Data
             : base(options)
         {
         }
-        public DbSet<PessoaModel> Pessoa { get; set; }
-        public DbSet<DisciplinaModel> Disciplina { get; set; }
-        public DbSet<TurmaModel> Turma { get; set; }
-        public DbSet<InscricaoModel> Inscricao { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<Disciplina> Disciplina { get; set; }
+        public DbSet<Turma> Turma { get; set; }
+        public DbSet<Inscricao> Inscricao { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

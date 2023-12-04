@@ -4,9 +4,9 @@ using WA.Models;
 
 namespace WA.Data.Map
 {
-    public class TurmaMap : IEntityTypeConfiguration<TurmaModel>
+    public class TurmaMap : IEntityTypeConfiguration<Turma>
     {
-        public void Configure(EntityTypeBuilder<TurmaModel> builder)
+        public void Configure(EntityTypeBuilder<Turma> builder)
         {
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Sigla).IsRequired().HasMaxLength(15);

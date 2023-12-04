@@ -4,9 +4,9 @@ using WA.Models;
 
 namespace WA.Data.Map
 {
-    public class InscricaoMap : IEntityTypeConfiguration<InscricaoModel>
+    public class InscricaoMap : IEntityTypeConfiguration<Inscricao>
     {
-        public void Configure(EntityTypeBuilder<InscricaoModel> builder)
+        public void Configure(EntityTypeBuilder<Inscricao> builder)
         {
             builder.HasKey(c => c.Id);
             builder.Property(c => c.IdAluno).IsRequired();
