@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\esine\\Documents\\GitHub\\5sbd\\WebAPI\\WA\\WA\\WA.csproj": {}
+    "C:\\Users\\esine\\Desktop\\Dudu\\FAETERJ\\2023_2\\5SBD\\WebAPI\\WA\\WA\\WA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\esine\\Documents\\GitHub\\5sbd\\WebAPI\\WA\\WA\\WA.csproj": {
+    "C:\\Users\\esine\\Desktop\\Dudu\\FAETERJ\\2023_2\\5SBD\\WebAPI\\WA\\WA\\WA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\esine\\Documents\\GitHub\\5sbd\\WebAPI\\WA\\WA\\WA.csproj",
+        "projectUniqueName": "C:\\Users\\esine\\Desktop\\Dudu\\FAETERJ\\2023_2\\5SBD\\WebAPI\\WA\\WA\\WA.csproj",
         "projectName": "WA",
-        "projectPath": "C:\\Users\\esine\\Documents\\GitHub\\5sbd\\WebAPI\\WA\\WA\\WA.csproj",
+        "projectPath": "C:\\Users\\esine\\Desktop\\Dudu\\FAETERJ\\2023_2\\5SBD\\WebAPI\\WA\\WA\\WA.csproj",
         "packagesPath": "C:\\Users\\esine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\esine\\Documents\\GitHub\\5sbd\\WebAPI\\WA\\WA\\obj\\",
+        "outputPath": "C:\\Users\\esine\\Desktop\\Dudu\\FAETERJ\\2023_2\\5SBD\\WebAPI\\WA\\WA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

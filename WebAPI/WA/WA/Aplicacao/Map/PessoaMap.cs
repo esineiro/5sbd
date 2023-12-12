@@ -18,7 +18,6 @@ namespace WA.Data.Map
             builder.Property(c => c.Tipo).IsRequired();
             builder.Property(c => c.Senha).HasMaxLength(255);
             builder.Property(c => c.Ativo).IsRequired();
-            builder.HasMany(c => c.Inscricoes);
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/setrT0FrKFheJVJRO+jGJ0s7huLaAkH3RMvLpmauJyRFSPlFAKWXRjrWLZm6annsm4QGe/+Uulqr3JKvcfOvg==",
+  "dgSpecHash": "Ap+8I6D1VedYUE3gWkWjwv9g+d+FuNW12nwfxhvvw1mRK6gameUZy68M0iyIDwVT7KOctntpvxxm39u7oJ/Rvg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\esine\\Documents\\GitHub\\5sbd\\WebAPI\\WA\\WA\\WA.csproj",
+  "projectFilePath": "C:\\Users\\esine\\Desktop\\Dudu\\FAETERJ\\2023_2\\5SBD\\WebAPI\\WA\\WA\\WA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\esine\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\esine\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
